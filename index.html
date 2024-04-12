@@ -38,7 +38,7 @@
                   </li>
                 </ul>
                 
-                <form class="d-flex" role="search">
+                <form class="d-flex" id="search-form" role="search">
                   <input class="form-control me-2 " type="search" placeholder="chercher un article..." aria-label="Search">
                   <button class=" me-2" type="submit">Create</button>
               
@@ -73,13 +73,18 @@
           <main class="main mt-5" id="content_article">
             <div class="container">
               <div class="row w-90 mx-auto">
+                
                 <!-- Sidebar -->
                 <div class="col-md-3 bg-primary rounded-4">
                   <form style="width: 18rem;margin: 5rem auto;" id="article-form">
                     <div  class="form-outline  mb-4">
-                      <label  class="form-label text-light d-flex flex-direction-column" for="form4Example1">Titre</label>
+                      <label  class="form-label text-light d-flex flex-direction-column" for="form4Example1">Tite</label>
                       <input type="text" classe="form-control rounded" id="article-title" placeholder="Titre de l'article" required>
                     </div>
+                    <!-- <div  class="form-outline  mb-4">
+                      <label  class="form-label text-light d-flex flex-direction-column" for="form4Example1">Image</label>
+                      <input type="file" classe="form-control rounded" accept="imgae/*" id="article-image" placeholder="Titre de l'article" >
+                    </div> -->
                     <div  class="form-outline mb-4">
                       <label  class="form-label text-light" for="form4Example3">Paragraphe</label>
                       <textarea id="article-content" class="form-control" placeholder="Contenu de l'article" rows="4" required></textarea>
@@ -88,32 +93,14 @@
                       <button data-mdb-ripple-init class="btn btn-light" type="submit">Publier</button>
                     </div>
                   </form>
-                  <!-- <aside class="sidebar  m-auto px-5 mt-5 ">
-                    
-                    <h4 class="titre_sidebar fs-5 mb-3 active">Catégorie</h4>
-                    <ul class="shadow">
-                      <li><a href="">Hight-Tech</a></li>
-                      <li><a href="">Concentré du web</a></li>
-                      <li><a href="">A propos</a></li>
-                      <li><a href="">Astuce pour développer</a></li>
-                      <li><a href="">Ressource</a></li>
-                      <li><a href="">Bonnes pratiques</a></li>
-                    </ul>
-                    <hr class="">
-                    <h4 class="titre_sidebar fs-5 mb-3">Auteur</h4>
-                    <ul class="shadow">
-                      <li><a href="">Hight-Tech</a></li>
-                      <li><a href="">Concentré du web</a></li>
-                      <li><a href="">A propos</a></li>
-                      <li><a href="">Astuce pour développer</a></li>
-                      <li><a href="">Ressource</a></li>
-                      <li><a href="">Bonnes pratiques</a></li>
-                    </ul>
-                  </aside> -->
-                </div>
+                 </div>
                 <!-- Fin sidebar -->
 
       <div class="col-md-9 bg-transparent">
+        <form class="container d-flex justify-content-center mb-5 ">
+          <input class="form-control w-50 me-2" id="search-input" type="search" placeholder="chercher un article..." aria-label="Search">
+          <button type="submit" class="btn">Rechercher</button>
+        </form>
 
            <div class="container-fluid d_flex">
             <div class="container ">
@@ -129,21 +116,23 @@
                 </p>
               </div>
               </article>
+              <section class="comments-section">
+                <h3>Commentaires</h3>
+                <ul class="comments-list"></ul>
+                <form class="comment-form">
+                  <div class="mb-3">
+                      <label for="comment-name">Nom</label>
+                      <input type="text" id="comment-name" name="comment-name">
+                  </div>
+                  <div class="mb-3">
+                      <label for="comment-content">Commentaire</label>
+                      <textarea id="comment-content" name="comment-content"></textarea>
+                  </div>
+                  <button type="submit">Ajouter un commentaire</button>
+              </form>
+              </section>
             </div>
-            <div class="container">
-              <article  class="article mb-4 bg-light rounded-4 ">
-                <div class="">
-                  <a class="article-img" href="article.html"><img src="img/blog-post.jpg"  class="img-fluid" alt=""></a>
-                </div>
-                <div class="bg-light">
-                <div class="article_date  mt-3">Publié le 01 mars 2024</div>
-                <h2 class="article_titre"><a href="">Le status de freelance</a></h2>
-                <p class="article_contenue">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, iusto id repellendus numquam cumque vitae. Quas facere magni totam tempore consectetur eos dolorum. Quaerat voluptates ex animi perferendis quia optio.
-                </p>
-              </div>
-              </article>
-            </div>
+            
             
            </div>    
             

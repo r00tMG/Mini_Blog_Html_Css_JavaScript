@@ -98,14 +98,14 @@ nav form .profile-photo{
     /* height: 20%; */
 }
 
-nav form input[type="search"]::placeholder{
+form input[type="search"]::placeholder{
     color: gray;
     font-size: 1rem;
     padding-left:  0.1rem;
     padding-right:  .1rem;
 }
 
-nav form button{
+form button{
     background-color:#007BFF;
     color: #ffff;
     border: none;
@@ -168,4 +168,14 @@ flex-wrap: wrap;
 
 .footer{
   clear: both;
+}
+
+.btn{
+  background-color:#007BFF;
+    color: #ffff;
+    border: none;
+    border-radius:30px;
+    padding: 10px 20px;
+    cursor: pointer !important;
+    transition:background-color 0.3s;
 }
