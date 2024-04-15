@@ -72,71 +72,72 @@
 
           <main class="main mt-5" id="content_article">
             <div class="container">
-              <div class="row w-90 mx-auto">
+              <div class="row w-100 mx-auto">
                 
                 <!-- Sidebar -->
-                <div class="col-md-3 bg-primary rounded-4">
-                  <form style="width: 18rem;margin: 5rem auto;" id="article-form">
-                    <div  class="form-outline  mb-4">
-                      <label  class="form-label text-light d-flex flex-direction-column" for="form4Example1">Tite</label>
-                      <input type="text" classe="form-control rounded" id="article-title" placeholder="Titre de l'article" required>
+                <div class="col-md-3 bg-primary rounded-4 w-auto mb-5">
+                  <form method="post" style="width: 18rem;margin: 5rem auto;" id="article-form">
+                    <div class="form-outline mb-4">
+                        <label class="form-label text-light d-flex flex-direction-column" for="article-title">Titre</label>
+                        <input type="text" class="form-control rounded" id="article-title" placeholder="Titre de l'article" required>
                     </div>
-                    <!-- <div  class="form-outline  mb-4">
-                      <label  class="form-label text-light d-flex flex-direction-column" for="form4Example1">Image</label>
-                      <input type="file" classe="form-control rounded" accept="imgae/*" id="article-image" placeholder="Titre de l'article" >
-                    </div> -->
-                    <div  class="form-outline mb-4">
-                      <label  class="form-label text-light" for="form4Example3">Paragraphe</label>
-                      <textarea id="article-content" class="form-control" placeholder="Contenu de l'article" rows="4" required></textarea>
+                    <div>
+                        <input type="file" id="article-image" accept="image/*">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label text-light" for="article-content">Paragraphe</label>
+                        <textarea id="article-content" class="form-control" placeholder="Contenu de l'article" rows="4" required></textarea>
                     </div>
                     <div class="mb-3 me-auto">
-                      <button data-mdb-ripple-init class="btn btn-light" type="submit">Publier</button>
+                        <button data-mdb-ripple-init class="btn btn-light" type="submit">Publier</button>
                     </div>
                   </form>
+                  
                  </div>
                 <!-- Fin sidebar -->
 
-      <div class="col-md-9 bg-transparent">
-        <form class="container d-flex justify-content-center mb-5 ">
-          <input class="form-control w-50 me-2" id="search-input" type="search" placeholder="chercher un article..." aria-label="Search">
-          <button type="submit" class="btn">Rechercher</button>
-        </form>
+                <div class="col-md-8 bg-transparent">
+                    <form class="container d-flex justify-content-center mb-5 ">
+                      <input class="form-control w-50 me-2" id="search-input" type="search" placeholder="chercher un article..." aria-label="Search">
+                      <button type="submit" class="btn">Rechercher</button>
+                    </form>
 
-           <div class="container-fluid d_flex">
-            <div class="container ">
-              <article class="article mb-4 bg-light rounded-4 ">
-                <div class="">
-                  <a class="article-img" href="article.html"><img src="img/blog-post.jpg"  class="img-fluid" alt=""></a>
-                </div>
-                <div class="bg-light">
-                <div class="article_date  mt-3">Publié le 01 mars 2024</div>
-                <h2 class="article_titre"><a href="">Le status de freelance</a></h2>
-                <p class="article_contenue">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, iusto id repellendus numquam cumque vitae. Quas facere magni totam tempore consectetur eos dolorum. Quaerat voluptates ex animi perferendis quia optio.
-                </p>
-              </div>
-              </article>
-              <section class="comments-section">
-                <h3>Commentaires</h3>
-                <ul class="comments-list"></ul>
-                <form class="comment-form">
-                  <div class="mb-3">
-                      <label for="comment-name">Nom</label>
-                      <input type="text" id="comment-name" name="comment-name">
-                  </div>
-                  <div class="mb-3">
-                      <label for="comment-content">Commentaire</label>
-                      <textarea id="comment-content" name="comment-content"></textarea>
-                  </div>
-                  <button type="submit">Ajouter un commentaire</button>
-              </form>
-              </section>
-            </div>
-            
-            
-           </div>    
-            
-            </div>
+                    <div class="container-fluid d_flex">
+                      <div class="container">
+                        <article class="article mb-4 bg-light rounded-4 ">
+                          <div class="">
+                            <a class="article-image" href="article.html"><img src="img/blog-post.jpg"  class="img-fluid" alt=""></a>
+                          </div>
+                          <div class="bg-light">
+                          <div class="article_date  mt-3">Publié le 01 mars 2024</div>
+                            <h2 class="article_titre"><a href="#">Le status de freelance</a></h2>
+                            <p class="article_contenue">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, iusto id repellendus numquam cumque vitae. Quas facere magni totam tempore consectetur eos dolorum. Quaerat voluptates ex animi perferendis quia optio.
+                            </p>
+                          </div>
+                        </article>
+                        
+                        <section class="comments-section">
+                          <h3>Commentaires</h3>
+                          <ul class="comments-list"></ul>
+                          <form class="form-group comment-form">
+                            <div class="mb-3">
+                                <label for="comment-name">Nom</label>
+                                <input type="text" id="comment-name" name="comment-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="comment-content">Commentaire:</label>
+                                <textarea class="form-control" id="comment-content" name="comment-content"></textarea>
+                            </div>
+                            <button type="submit">Ajouter un commentaire</button>
+                        </form>
+                        </section>
+                      </div>
+                      
+                      
+                    </div>    
+                      
+                 </div>
               </div>
             </div>
 
@@ -177,6 +178,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="js/script.js" type="module"></script>
+
   </body>
 </html>
