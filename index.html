@@ -15,7 +15,7 @@
 <body>
     <header>
         <!-- Navbar -->
-        <div class="container-fluid bg_navbar shadow z-3 fixed-top">
+        <div class="container-fluid bg_navbar shadow z-3 ">
             <nav class="navbar navbar-expand-lg bg_navbar  w-80 mx-auto">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -29,25 +29,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#content_article">Article</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">A propos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link active" href="#articles-container">Article</a>
                             </li>
                         </ul>
-
                         <form class="d-flex" id="search-form" role="search">
-                            <input class="form-control me-2 " type="search" placeholder="chercher un article..."
-                                aria-label="Search">
-                            <button class=" me-2" type="submit">Create</button>
-
                             <div class="profile-photo ">
                                 <img class="rounded rounded-circle" src="img/profile-photo.jpeg" width="50px"
                                     height="50px" alt="">
@@ -62,63 +47,79 @@
 
     <!-------------- Banniere -------------->
     <section class="w-100" id="bg_hero ">
+        <!-- image en carroussel -->
         <div id="carouselExampleSlidesOnly" class="carousel slide mt-1" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="img/blog-post.jpg" class="img-fluid d-block w-100 opacity carrous" alt="...">
                 </div>
-                <div class="carousel-item">
+                <!-- <div class="carousel-item">
                     <img src="img/blogpost.jpg" class="img-fluid d-block w-100 opacity carrous" alt="...">
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- Fin image en carroussel -->
     </section>
+    <!--------------Fin banniere -------------->
+
     <!----------------------- Contenu de page ------------------->
-    <main class="main mt-5">
+    <main class="main mt-5" id="main">
         <div class="container">
             <div class="row w-100 mx-auto">
 
                 <!---------------- Sidebar --------------->
-                <div class="col-md-3 bg-primary rounded-4 w-auto mb-5">
-                    <form method="post" style="width: 18rem;margin: 5rem auto;" id="article-form">
-                        <div class="form-outline mb-4">
-                            <label class="form-label text-light d-flex flex-direction-column"
-                                for="article-title">Titre</label>
-                            <input type="text" class="form-control rounded" id="article-title"
-                                placeholder="Titre de l'article" required>
-                        </div>
-                        <div>
-                            <input type="file" id="article-image" accept="image/*">
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label text-light" for="article-content">Paragraphe</label>
-                            <textarea id="article-content" class="form-control" placeholder="Contenu de l'article" rows="4" required></textarea>
-                        </div>
-                        <div class="mb-3 me-auto">
-                            <button data-mdb-ripple-init class="btn btn-light" type="submit">Publier</button>
-                        </div>
-                    </form>
-
+                <div class="col-md-4 bg-primary oder-2 rounded-4 w-25 mb-5" id="sticky-sidebar">
+                    <div class="sticky-top">
+                        <form method="post" style="width: auto;margin: 5rem auto;" id="article-form">
+                            <div class="form-outline my-4">
+                                <label class="form-label fs-3 text-light d-flex flex-direction-column"
+                                    for="article-title">Titre</label>
+                                <input type="text" class="form-control rounded" id="article-title"
+                                    placeholder="Titre de l'article" required>
+                            </div>
+                            <div>
+                                <input type="file" id="article-image" accept="image/*">
+                            </div>
+                            <div class="form-outline my-4">
+                                <label class="form-label text-light fs-3" for="article-content">Contenu</label>
+                                <textarea id="article-content" class="form-control" placeholder="Contenu de l'article" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3 me-auto">
+                                <button data-mdb-ripple-init class="btn btn-light" type="submit">Publier</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!------------------ Fin sidebar -------------->
 
-                <div class="col-md-9 bg-transparent ">
+                <div class="col-md-8 bg-transparent w-75">
                     <!----------Formulaire de recherche----------->
-                    <form class="container d-flex justify-content-center mb-5 ">
-                        <input class="form-control w-50 me-2" id="search-input" type="search"
-                            placeholder="chercher un article..." aria-label="Search">
-                        <button type="submit" class="btn">Rechercher</button>
-                    </form>
+                    <section id="search-section">
+                        <h2 class="text-center">Rechercher un article</h2>
+                        <form id="search-form">
+                            <div class="form-group d-flex align-items-center justify-content-center">          
+                                <input type="text" class="form-control w-50 me-2" id="search-input" placeholder="Entrez le titre de l'article...">
+                                <div type="" class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                      </svg>
+                                </div>
+                            </div>
+                            <div id="article_rechercher" class="hidden w-75 mx-auto bg-primary">
+    
+                            </div>
+                        </form>
+                    </section>
                     <!----------Fin formulaire de recherche----------->
 
-
                     <section id="articles-section" style="margin-left: 100px;">
-                        <h2 class="text-center">Liste des articles</h2>
-                        <!-- Affichage Article -->
+                        <h2 class="text-center fs-1 my-5">Liste des articles</h2>
+                        
+                        <!-- Affichage article -->
                         <div id="articles-container">
+                            
                         </div>
-                        <!-- Fin affichage Article -->
+                        <!-- Fin affichage article -->
                     </section>
 
                 </div>
